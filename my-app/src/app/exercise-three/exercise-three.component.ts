@@ -38,10 +38,8 @@ export class ExerciseThreeComponent implements OnInit {
       this.user.gender = this.mapForm.controls['gender'].value;
       this.user.donate = this.mapForm.controls['donate'].value;
     }
-    alert("mic check 1 2");
   }
   edit(){
-    alert("edit");
     this.isValidFormSubmitted = false;
   }
 }

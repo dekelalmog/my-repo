@@ -25,6 +25,7 @@ export class ExerciseThreeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this.mapForm.controls['firstName'].value);
   }
 
   onSubmit() {

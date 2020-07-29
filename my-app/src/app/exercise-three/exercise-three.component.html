@@ -4,14 +4,14 @@
         First Name:
         <input type="text" formControlName="firstName" ngModel pattern="[a-zA-Z ]{2,}">
     </label>
-    <div *ngIf="mapForm.get('firstName').invalid" class="error">
+    <div *ngIf="mapForm.get('firstName').invalid && mapForm.get('firstName').touched" class="error">
         proper name required.
     </div>
     <label class="name">
         Last Name:
         <input type="text" formControlName="lastName" ngModel pattern="[a-zA-Z ]{2,}">
     </label>
-    <div *ngIf="mapForm.get('lastName').invalid" class="error">
+    <div *ngIf="mapForm.get('lastName').invalid && mapForm.get('lastName').touched" class="error">
         proper name required.
     </div>
         <p>which food do you like:</p>
@@ -34,7 +34,7 @@
         <input type="checkbox" formControlName="donate">
         yes
         </label>
-        <div *ngIf="mapForm.get('donate').invalid" class="error">
+        <div *ngIf="mapForm.get('donate').invalid && mapForm.get('donate').touched" class="error">
             you better donate your kidney.
         </div>
   <p>enter your birthday</p>

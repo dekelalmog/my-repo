@@ -3,9 +3,9 @@
 <label for="planets">choose your planet</label>
 <select id="planets"  [(ngModel)]="currPlanet"> 
     <option *ngFor="let planet of myPlanets" [ngClass]="{
-        'success' : planet.name === 'Saturn',
-        'primary' : planet.name === 'Uranus',
-        'danger'  : planet.name === 'Mars'
+        'success' : planet.type === typesEnum.Saturn,
+        'primary' : planet.type === typesEnum.Uranus,
+        'danger'  : planet.type === typesEnum.Mars
     }" [ngValue]="planet">{{planet.name}}</option>
 </select>
 <label for="age">enter your age</label>

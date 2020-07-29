@@ -1,0 +1,14 @@
+ <p>exercise-two works!</p>
+<div>
+<label for="planets">choose your planet</label>
+<select id="planets" [(ngModel)] ="CurrPlanet">
+    <option *ngFor="let planet of myplanets" [ngClass]="{
+        'success' : planet.name === 'Saturn',
+        'primary' : planet.name === 'Uranus',
+        'danger'  : planet.name === 'Mars'
+    }">{{planet.name}}</option>
+</select>
+<label for="age">enter your age</label>
+<input id="age" type="text" #age (keyup.enter)="fnc(age.value)">
+<p *ngIf="Age > 0">your age in {{CurrPlanet}} is {{Age * getVal(CurrPlanet).value}}</p>
+</div>

@@ -1,0 +1,59 @@
+<p>exercise-three works!</p>
+<form [formGroup]="mapForm" (ngSubmit)="onSubmit()" *ngIf="!isValidFormSubmitted">
+    <label class="name">
+        First Name:
+        <input type="text" formControlName="firstName" ngModel pattern="[a-zA-Z ]{2,}">
+    </label>
+    <div *ngIf="mapForm.get('firstName').invalid" class="error">
+        proper name required.
+    </div>
+    <label class="name">
+        Last Name:
+        <input type="text" formControlName="lastName" ngModel pattern="[a-zA-Z ]{2,}">
+    </label>
+    <div *ngIf="mapForm.get('lastName').invalid" class="error">
+        proper name required.
+    </div>
+        <p>which food do you like:</p>
+        <select formControlName="food">
+            <option>hamburger</option>
+            <option>pizza</option>
+            <option>fish and chips</option>
+        </select>
+
+    <p>Please select your gender:</p>
+  <input type="radio" name="gender" value="male" formControlName="gender">
+  <label for="male">Male</label><br>
+  <input type="radio" name="gender" value="female" formControlName="gender">
+  <label for="female">Female</label><br>
+  <input type="radio" name="gender" value="other" formControlName="gender">
+  <label for="other">Other</label>
+
+        <p>whould you donate kidney to the ceo if he loses his?</p>
+        <label>
+        <input type="checkbox" formControlName="donate">
+        yes
+        </label>
+        <div *ngIf="mapForm.get('donate').invalid" class="error">
+            you better donate your kidney.
+        </div>
+  <p>enter your birthday</p>
+  <input type="date" formControlName="date">
+  <br>
+  <p *ngIf="mapForm.valid">=============</p>
+    <button type="submit" [disabled]="!mapForm.valid">Submit</button>
+    <p *ngIf="mapForm.valid">=============</p>
+</form>
+<div *ngIf="isValidFormSubmitted" class="msg">
+<h1>hi {{user.firstName}}! </h1>
+<span *ngIf="user.gender == 'male'">Mr {{user.lastName}} your form has been sent.</span>
+<span *ngIf="user.gender == 'female'">Ms {{user.lastName}} your form has been sent.</span>
+<p>we appreciate your love to {{user.food}}</p>
+<p>and we know {{user.date}} is special</p>
+<h2 *ngIf="user.donate">btw... thanks for the kidney</h2>
+<button type="submit" (click)="edit()">edit</button>
+
+</div>
+
+
+

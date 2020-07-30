@@ -1,0 +1,11 @@
+<p>details works!</p>
+<div class="msg">
+    <h1>hi {{user.firstName}}! </h1>
+    <span *ngIf="user.gender == 'male'">Mr {{user.lastName}} your form has been sent.</span>
+    <span *ngIf="user.gender == 'female'">Ms {{user.lastName}} your form has been sent.</span>
+    <p>we appreciate your love to {{user.food}}</p>
+    <p>and we know {{user.date}} is special</p>
+    <h2 *ngIf="user.donate">btw... thanks for the kidney</h2>
+    <button type="submit" (click)="edit()">edit</button>
+</div>
+    

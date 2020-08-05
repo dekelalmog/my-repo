@@ -15,7 +15,6 @@ export class PostsListComponent implements OnInit {
 @Output() postAdded: EventEmitter<Post> = new EventEmitter<Post>();
 faSmile = faSmile;
 cities = ['haifa','manchester'];
-
 constructor(){
 
 }
@@ -26,6 +25,8 @@ constructor(){
         const post = new Post();
         post.title = title;
         post.text = text;
+        post.date = new Date();
+        post.hasLocation = this.smileyCheck(text);
         this.postAdded.emit(post);
     }
 

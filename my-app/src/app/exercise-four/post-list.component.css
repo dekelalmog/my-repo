@@ -1,4 +1,19 @@
 p {
-  color: blue;
+  color: white;
 }
 @import '~font-awesome/css/font-awesome.css';
+
+.card{
+  background-image: url('../../pictures/cool-background.png');
+
+}
+button{
+  align-self: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+ 
+}

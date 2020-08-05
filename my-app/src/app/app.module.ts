@@ -16,6 +16,7 @@ import {PostStoreService} from './exercise-four/services/post.store.service';
 import {PostsResolverService} from './exercise-four/services/post.resolver';
 import {MatCardModule} from '@angular/material/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     RootStoreModule,
     MatCardModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatButtonModule
 
   ],
   providers: [PostStoreService,PostsResolverService],

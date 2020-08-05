@@ -1,12 +1,10 @@
-p {
-  color: white;
-}
+
 @import '~font-awesome/css/font-awesome.css';
 
-.card{
-  background-image: url('../../pictures/cool-background.png');
-
+.new {
+  color: rgb(107, 255, 206);
 }
+
 button{
   align-self: center;
 }
@@ -15,5 +13,6 @@ button{
   flex-direction: column;
   height: 300px;
   justify-content: space-evenly;
- 
+  border: 5px double #1C6EA4;
+  border-radius: 40px;
 }

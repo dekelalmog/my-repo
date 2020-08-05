@@ -1,21 +1,11 @@
 import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Post } from './models/post';
+import { faSmile } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
     selector: 'posts-list',
-    template: `
-    <p>post-list works</p>
-    <ul>
-    <li *ngFor="let post of posts">
-    <h1>{{post.title}}</h1>
-    <p>{{post.text}}</p>
-    </li>
-    </ul>
-    <input #title placeholder="enter title"/>
-    <input #text placeholder="enter text"/>
-    <button (click)="addPost(title.value,text.value)">add post</button>
-    `,
-    styles: [],
+    templateUrl: './posts-list.component.html',
+    styleUrls: ['./post-list.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
@@ -23,7 +13,7 @@ export class PostsListComponent implements OnInit {
     
 @Input() posts: Post[];
 @Output() postAdded: EventEmitter<Post> = new EventEmitter<Post>();
-
+faSmile = faSmile;
 constructor(){
 
 }

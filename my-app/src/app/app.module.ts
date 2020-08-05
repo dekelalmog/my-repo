@@ -12,8 +12,10 @@ import { ExerciseFourComponent } from './exercise-four/exercise-four.component';
 import {PostsListComponent} from './exercise-four/posts-list.component';
 import { RootStoreModule } from './root-store/root-store.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PreloadSelectedModulesList } from './preload_modules';
-
+import {PostStoreService} from './exercise-four/services/post.store.service';
+import {PostsResolverService} from './exercise-four/services/post.resolver';
+import {MatCardModule} from '@angular/material/card';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,12 @@ import { PreloadSelectedModulesList } from './preload_modules';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    RootStoreModule
+    RootStoreModule,
+    MatCardModule,
+    FontAwesomeModule
+
   ],
-  providers: [PreloadSelectedModulesList],
+  providers: [PostStoreService,PostsResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

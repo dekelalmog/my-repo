@@ -57,6 +57,7 @@ export class Store<T> {
         this._storeValue = !environment.production ? deepFreeze(newStateFn(this._storeValue)) : newStateFn(this._storeValue);
     
         if (prevState === this._storeValue) {
+            console.log('new state not created!', this._storeName);
         }
     
             

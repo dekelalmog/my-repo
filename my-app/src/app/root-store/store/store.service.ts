@@ -3,8 +3,6 @@ import { Store } from '../../core/store/store';
 
 export class UiState {
     editMode: boolean;
-    
-
 }
 
 const INITIAL_UI_STATE: UiState = {

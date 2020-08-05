@@ -14,6 +14,8 @@ export class PostsListComponent implements OnInit {
 @Input() posts: Post[];
 @Output() postAdded: EventEmitter<Post> = new EventEmitter<Post>();
 faSmile = faSmile;
+cities = ['haifa','manchester'];
+
 constructor(){
 
 }
@@ -25,5 +27,14 @@ constructor(){
         post.title = title;
         post.text = text;
         this.postAdded.emit(post);
+    }
+
+    smileyCheck(text:string){
+        for (const city of this.cities) {
+            if(text.toLocaleUpperCase().includes(city.toLocaleUpperCase())){
+                return true;
+            }
+        } 
+        return false;
     }
 }

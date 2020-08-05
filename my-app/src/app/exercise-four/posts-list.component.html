@@ -18,6 +18,6 @@
     {{post.text}}
     </p>
     </mat-card-content>
-    <fa-icon [icon]="faSmile"></fa-icon>
+    <fa-icon [icon]="faSmile" *ngIf="smileyCheck(post.text)"></fa-icon>
     </mat-card>
 </div>

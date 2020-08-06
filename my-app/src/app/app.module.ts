@@ -18,6 +18,8 @@ import {MatCardModule} from '@angular/material/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatButtonModule} from '@angular/material/button';
 import {AddPostComponent} from './exercise-four/add-post/add-post.component';
+import {messiPipe} from './exercise-four/messi.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import {AddPostComponent} from './exercise-four/add-post/add-post.component';
     DetailsComponent,
     ExerciseFourComponent,
     PostsListComponent,
-    AddPostComponent 
+    AddPostComponent,
+    messiPipe 
   ],
   imports: [
     BrowserModule,

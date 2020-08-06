@@ -9,7 +9,7 @@ import { ExerciseThreeComponent } from './exercise-three/exercise-three.componen
 import {ReactiveFormsModule} from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { ExerciseFourComponent } from './exercise-four/exercise-four.component';
-import {PostsListComponent} from './exercise-four/posts-list.component';
+import {PostsListComponent} from './exercise-four/post-list/posts-list.component';
 import { RootStoreModule } from './root-store/root-store.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PostStoreService} from './exercise-four/services/post.store.service';
@@ -17,7 +17,7 @@ import {PostsResolverService} from './exercise-four/services/post.resolver';
 import {MatCardModule} from '@angular/material/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatButtonModule} from '@angular/material/button';
-
+import {AddPostComponent} from './exercise-four/add-post/add-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import {MatButtonModule} from '@angular/material/button';
     ExerciseThreeComponent,
     DetailsComponent,
     ExerciseFourComponent,
-    PostsListComponent 
+    PostsListComponent,
+    AddPostComponent 
   ],
   imports: [
     BrowserModule,

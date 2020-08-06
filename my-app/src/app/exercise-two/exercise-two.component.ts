@@ -10,9 +10,9 @@ export class ExerciseTwoComponent {
   public typesEnum = types;
   age : number = 0; 
    
-   myPlanets : Planet[] = [ {name: 'Saturn' , value: 3.5, type:0},
-   {name: 'Uranus', value:2.4,type:1 },
-   {name: 'Mars', value:5,type:2 }];
+   myPlanets : Planet[] = [ {name: 'Saturn' , value: 3.5, type:types.Saturn},
+   {name: 'Uranus', value:2.4,type:types.Uranus },
+   {name: 'Mars', value:5,type:types.Mars }];
    
   currPlanet : Planet;
   constructor() {

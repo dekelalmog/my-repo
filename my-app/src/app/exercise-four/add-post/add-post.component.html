@@ -1,0 +1,8 @@
+<p class="new">write new post</p>
+<div class="form">
+    <label>Title</label>
+    <input id="title" #title placeholder="enter title"/>
+    <label>write your post</label>
+    <textarea #txt cols="40" rows="4" placeholder="enter text"></textarea>
+    <button mat-fab color="primary" (click)="addPost(title.value,txt.value)">upload</button>
+</div>

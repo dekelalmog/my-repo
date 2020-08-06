@@ -13,6 +13,6 @@ export class ExerciseOneComponent{
   }
 
   fun(val:string) {
-    this.msg = "hello " + val;
+    this.msg =`hello ${val}`;
   }
 }

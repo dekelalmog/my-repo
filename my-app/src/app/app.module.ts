@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExerciseOneComponent } from './exercise-one/exercise-one.component';
 import { ExerciseTwoComponent } from './exercise-two/exercise-two.component';
 import { ExerciseThreeComponent } from './exercise-three/exercise-three.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { ExerciseFourComponent } from './exercise-four/exercise-four.component';
 import {PostsListComponent} from './exercise-four/post-list/posts-list.component';
@@ -19,6 +18,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatButtonModule} from '@angular/material/button';
 import {AddPostComponent} from './exercise-four/add-post/add-post.component';
 import {messiPipe} from './exercise-four/messi.pipe';
+import {MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -41,8 +47,14 @@ import {messiPipe} from './exercise-four/messi.pipe';
     RootStoreModule,
     MatCardModule,
     FontAwesomeModule,
-    MatButtonModule
-
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatListModule
   ],
   providers: [PostStoreService,PostsResolverService],
   bootstrap: [AppComponent]

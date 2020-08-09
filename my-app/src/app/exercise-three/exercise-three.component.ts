@@ -10,14 +10,15 @@ export class ExerciseThreeComponent implements OnInit {
   isValidFormSubmitted = false;
 
   user =  new Person();
-  
+  foods = ['hamburger','pizza','fish and chips'];
+  musicTypes = ['rap','rock','hip-hop'];
   mapForm = new FormGroup({
-    firstName: new FormControl('',Validators.required),
-    lastName: new FormControl('',Validators.required),
+    firstName: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]{2,}')]),
+    lastName: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]{2,}')]),
     date: new FormControl('',Validators.required),
     food: new FormControl('',Validators.required),
     gender: new FormControl('',Validators.required),
-    donate: new FormControl(false,Validators.requiredTrue)
+    music: new FormControl(''),
   });
 
   constructor() {
@@ -36,7 +37,7 @@ export class ExerciseThreeComponent implements OnInit {
       this.user.date = this.mapForm.controls['date'].value;
       this.user.food = this.mapForm.controls['food'].value;
       this.user.gender = this.mapForm.controls['gender'].value;
-      this.user.donate = this.mapForm.controls['donate'].value;
+      this.user.music = this.mapForm.controls['music'].value;
     }
   }
   edit(){
@@ -49,8 +50,8 @@ export class Person {
   lastName: string;
   food: string;
   gender: string;
-  donate: boolean;
   date: Date;
+  music: [string];
   constructor(){
   }
 };

@@ -1,44 +1,50 @@
 <form [formGroup]="mapForm" (ngSubmit)="onSubmit()" *ngIf="!isValidFormSubmitted">
-    <label class="name">
-        First Name:
-        <input type="text" formControlName="firstName" ngModel pattern="[a-zA-Z ]{2,}">
-    </label>
-    <div *ngIf="mapForm.get('firstName').invalid && mapForm.get('firstName').touched" class="error">
-        proper name required.
-    </div>
-    <label class="name">
-        Last Name:
-        <input type="text" formControlName="lastName" ngModel pattern="[a-zA-Z ]{2,}">
-    </label>
-    <div *ngIf="mapForm.get('lastName').invalid && mapForm.get('lastName').touched" class="error">
-        proper name required.
-    </div>
-        <p>which food do you like:</p>
-        <select formControlName="food">
-            <option>hamburger</option>
-            <option>pizza</option>
-            <option>fish and chips</option>
-        </select>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>First Name:</mat-label>
+            <input matInput formControlName="firstName">
+            <mat-error *ngIf="mapForm.get('firstName').invalid">proper name required.</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name:</mat-label>
+            <input matInput formControlName="lastName">
+            <mat-error *ngIf="mapForm.get('lastName').invalid">proper name required.</mat-error>
+        </mat-form-field>
 
-    <p>Please select your gender:</p>
-  <input type="radio" name="gender" value="male" formControlName="gender">
-  <label for="male">Male</label><br>
-  <input type="radio" name="gender" value="female" formControlName="gender">
-  <label for="female">Female</label><br>
-  <input type="radio" name="gender" value="other" formControlName="gender">
-  <label for="other">Other</label>
+        <mat-form-field appearance="fill">
+            <mat-label>what is your favorite food:</mat-label>
+            <mat-select formControlName="food">
+                <mat-option *ngFor="let food of foods" value="food">
+                    {{food}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="mapForm.get('food').invalid"> *pick food</mat-error>
+        </mat-form-field>
+    
+        <p><u>Please select your gender:</u></p>
+        <mat-radio-group formControlName="gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
 
-        <p>whould you donate kidney to the ceo if he loses his?</p>
-        <label>
-        <input type="checkbox" formControlName="donate">
-        yes
-        </label>
-        <div *ngIf="mapForm.get('donate').invalid && mapForm.get('donate').touched" class="error">
-            you better donate your kidney.
-        </div>
-  <p>enter your birthday</p>
-  <input type="date" formControlName="date">
-  <br>
+        <mat-selection-list formControlName="music">
+            <p><u>What music do you like:</u></p>
+            <mat-list-option *ngFor="let musicType of musicTypes" [value] = "musicType">
+                {{musicType}}
+            </mat-list-option>    
+        </mat-selection-list>
+
+  <p><u>Enter your birthday</u></p>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+    <br>
   <p *ngIf="mapForm.valid">=============</p>
     <button type="submit" [disabled]="!mapForm.valid">Submit</button>
     <p *ngIf="mapForm.valid">=============</p>

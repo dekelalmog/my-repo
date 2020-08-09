@@ -3,8 +3,10 @@
     <span *ngIf="user.gender == 'male'">Mr {{user.lastName}} your form has been sent.</span>
     <span *ngIf="user.gender == 'female'">Ms {{user.lastName}} your form has been sent.</span>
     <p>we appreciate your love to {{user.food}}</p>
-    <p>and we know {{user.date}} is special</p>
-    <h2 *ngIf="user.donate">btw... thanks for the kidney</h2>
+    <p>and we know {{user.date | date}} is special</p>
+    <div >
+        <p *ngFor="let type of user.music">{{type}} - nice taste you got</p>
+    </div>
     <button type="submit" (click)="edit()">edit</button>
 </div>
     

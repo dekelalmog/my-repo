@@ -1,18 +1,10 @@
-.name {
+mat-form-field,mat-radio-button{
     display: block;
   }
-label{
-    width: 6em;
-    margin: .5em 0;
-    color: #607D8B;
-    font-weight: bold;
-}
-
   button{
     margin: 8px;
     display: block;
   }
-  .error {
-    color: red;
-  }
+  
+  
   

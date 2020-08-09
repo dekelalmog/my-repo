@@ -1,2 +1,7 @@
 
 @import '~font-awesome/css/font-awesome.css';
+
+div {
+    width: 310px;
+    word-break: break-all;
+}

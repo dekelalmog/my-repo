@@ -1,7 +1,7 @@
 <div class="msg">
     <h1>hi {{user.firstName}}! </h1>
-    <span *ngIf="user.gender == 'male'">Mr {{user.lastName}} your form has been sent.</span>
-    <span *ngIf="user.gender == 'female'">Ms {{user.lastName}} your form has been sent.</span>
+    <span *ngIf="user.gender === 'Male'">Mr {{user.lastName}} your form has been sent.</span>
+    <span *ngIf="user.gender === 'Female'">Ms {{user.lastName}} your form has been sent.</span>
     <p>we appreciate your love to {{user.food}}</p>
     <p>and we know {{user.date | date}} is special</p>
     <div >
